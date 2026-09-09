@@ -1,0 +1,20 @@
+nav{
+    background-color: #003366;
+    font-family: Arial, sans-serif;
+    font-style: bold;
+}
+head img{
+    width: 100px;
+    height: auto;
+}
+
+header {
+    display:block ;
+    justify-content: space-between;
+}
+nav li a {
+    color: #ffffff;
+}
+main{
+    background-color: #f2f2f2;
+}
