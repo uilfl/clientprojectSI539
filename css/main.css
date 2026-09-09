@@ -1,20 +1,51 @@
-nav{
-    background-color: #003366;
-    font-family: Arial, sans-serif;
-    font-style: bold;
+.logo{
+    width: 100px;
+    height: auto;
+    display: block;
+}
+h1{
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    position: relative;
+    left: 0;
 }
 head img{
     width: 100px;
     height: auto;
 }
-
-header {
-    display:block ;
+    
+.head div {
+    display:inline-block ;
     justify-content: space-between;
 }
-nav li a {
-    color: #ffffff;
+a {
+    color: #171616;
 }
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f2f2f2;
+}
+.nav-links li {
+    float: left;
+}
+.nav-links li a {
+  display: block;
+  color: rgb(6, 6, 6);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.nav-links li a:hover {
+  background-color: #ddd;
+}
+img{
+    width: 600px;
+    height: 400px;
+}
+
 main{
     background-color: #f2f2f2;
 }
