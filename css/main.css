@@ -1,7 +1,6 @@
 .logo{
-    width: 100px;
+    width: 300px;
     height: auto;
-    display: block;
 }
 h1{
     font-size: 2em;
@@ -37,6 +36,7 @@ a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-size: 18px;
 }
 .nav-links li a:hover {
   background-color: #ddd;
@@ -48,4 +48,7 @@ img{
 
 main{
     background-color: #f2f2f2;
+}
+header{
+    display: flex;
 }
