@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .logo{
     width: 300px;
     height: auto;
@@ -7,11 +8,18 @@ h1{
     margin-bottom: 0.5em;
     position: relative;
     left: 0;
+=======
+nav{
+    background-color: #003366;
+    font-family: Arial, sans-serif;
+    font-style: bold;
+>>>>>>> d472b20 (done)
 }
 head img{
     width: 100px;
     height: auto;
 }
+<<<<<<< HEAD
     
 .head div {
     display:inline-block ;
@@ -51,4 +59,16 @@ main{
 }
 header{
     display: flex;
+=======
+
+header {
+    display:block ;
+    justify-content: space-between;
+}
+nav li a {
+    color: #ffffff;
+}
+main{
+    background-color: #f2f2f2;
+>>>>>>> d472b20 (done)
 }
