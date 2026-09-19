@@ -20,6 +20,9 @@ head img{
 a {
     color: #171616;
 }
+.nav {
+    display: flex;
+}
 .nav-links {
     list-style-type: none;
     margin: 0;
