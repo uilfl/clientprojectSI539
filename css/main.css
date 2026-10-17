@@ -1,57 +1,419 @@
-.logo{
-    width: 300px;
-    height: auto;
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
 }
+
+body,
+button,
+input,
+select,
+textarea {
+    margin: 0;
+    color: #171616;
+    font-family: "IBM Plex Sans", sans-serif;
+    line-height: 1.5;
+}
+
+
 h1{
     font-size: 2em;
-    margin-bottom: 0.5em;
-    position: relative;
-    left: 0;
+    margin: 0;
 }
-head img{
+
+.head .logo {
     width: 100px;
     height: auto;
 }
-    
-.head div {
-    display:inline-block ;
-    justify-content: space-between;
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
+
+.skip-link:focus {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: auto;
+  height: auto;
+  margin: 0;
+  z-index: 9999;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 10px 20px;
+  border: 1px solid #000000;
+}
+.head {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.head > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.head > div:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+}
+
+.social-media-link-group {
+    display: flex;
+    gap: 0.75rem;
+}
+
 a {
     color: #171616;
 }
-.nav {
-    display: flex;
+
+a:focus-visible {
+    outline: 3px solid #FFCB05;
+    outline-offset: 3px;
 }
-.nav-links {
+
+nav ul.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: #f2f2f2;
+    background-color: #00274C;;
 }
-.nav-links li {
-    float: left;
+
+nav ul.nav-links li {
+    margin: 0;
+    color: #00274C;
 }
-.nav-links li a {
+
+nav ul.nav-links li a {
   display: block;
-  color: rgb(6, 6, 6);
+  color: #FFFFFF;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 18px;
 }
-.nav-links li a:hover {
-  background-color: #ddd;
-}
-img{
-    width: 600px;
-    height: 400px;
+
+nav ul.nav-links li a:hover,
+nav ul.nav-links li a:focus {
+  background-color: #00274C;
 }
 
-main{
-    background-color: #f2f2f2;
+.nav-menu {
+  display: contents;
 }
-header{
+
+.nav-toggle {
+  display: none;
+}
+
+main img{
+    max-width: 100%;
+    height: auto;
+}
+
+main,
+.impact-stats {
+    width: min(100% - 2rem, 1200px);
+    margin: 0 auto;
+}
+
+main {
+    background-color: #f2f2f2;
+    padding: 1.5rem;
+}
+
+main > section {
+    margin-bottom: 2.5rem;
+}
+
+main > section:last-child {
+    margin-bottom: 0;
+}
+
+main > section > h2 {
+    margin-top: 0;
+}
+
+main > section > article {
+    margin-top: 1rem;
+}
+
+/* consultation from google search and AI*/
+.impact-stats {
+  padding: 1.5rem 0;
+}
+
+.impact-stats__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.impact-stats__value {
+  color: #00274C;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 0.75rem;
+}
+
+
+/* Branding guidelines : https://brand.umich.edu/ */ 
+
+.impact-stats__list li,
+.vision > ul > li,
+.argument > ul > li {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+article {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.vision article a {
+    display: block;
+    width: fit-content;
+    margin-top: 0.75rem;
+    padding: 0.25rem 0;
+    color: #00274C;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+article img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.argument {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    "heading heading"
+    "text image"
+    "list list";
+  gap: 1.5rem;
+}
+
+.argument h2 {
+  grid-area: heading;
+}
+
+.argument > p {
+  grid-area: text;
+}
+
+.argument img {
+  grid-area: image;
+  max-width: 580px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.vision > ul,
+.argument > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+.argument > ul {
+  grid-area: list;
+  margin: 0;
+}
+
+footer {
+    background-color: #00274C;
+    color: #FFFFFF;
+    margin-top: 2rem;
+    padding: 2rem max(1rem, calc((100% - 1200px) / 2));
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-branding {
     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-branding img {
+    display: block;
+    object-fit: contain;
+}
+
+.footer-branding .footer-block-m {
+    width: 110px;
+    height: 110px;
+}
+
+.footer-branding .footer-wordmark {
+    width: min(100%, 270px);
+    height: auto;
+    background-color: #FFFFFF;
+    padding: 0.5rem;
+}
+
+.footer-grid h2 {
+    font-size: 1.1rem;
+    margin: 0 0 0.75rem;
+}
+
+.footer-grid p {
+    margin: 0 0 0.75rem;
+}
+
+.footer-grid a {
+    color: #FFFFFF;
+}
+
+.footer-nav,
+.footer-social-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-nav li,
+.footer-social-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+}
+
+.footer-social-links li {
+    margin: 0;
+}
+
+.footer-meta {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    grid-column: 1 / -1;
+    margin: 0;
+    padding-top: 1rem;
+}
+
+.footer-meta p {
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    .head,
+    .head > div:first-child,
+    .head > div:last-child {
+        align-items: stretch;
+    }
+
+    .head > div:last-child {
+        width: 100%;
+    }
+
+    .social-media-link-group {
+        justify-content: center;
+    }
+
+    nav ul.nav-links {
+        justify-content: center;
+    }
+
+    .nav-menu {
+        display: block;
+    }
+
+    .nav-toggle {
+        display: block;
+        list-style: none;
+        width: 100%;
+        box-sizing: border-box;
+        border: 0;
+        border-radius: 0;
+        background-color: #00274C;
+        color: #FFFFFF;
+        cursor: pointer;
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+        text-align: center;
+    }
+
+    .nav-toggle::-webkit-details-marker {
+        display: none;
+    }
+
+    .nav-toggle:hover,
+    .nav-toggle:focus {
+        background-color: #001a33;
+    }
+
+    .nav-menu .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-menu[open] .nav-links {
+        display: flex;
+    }
+
+    .argument {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "heading"
+            "text"
+            "image"
+            "list";
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .footer-branding {
+        justify-content: center;
+    }
+
+    .footer-meta {
+        grid-column: auto;
+    }
 }
