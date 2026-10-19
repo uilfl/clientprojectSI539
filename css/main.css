@@ -338,7 +338,7 @@ footer {
     margin: 0;
 }
 
-@media (max-width: 580px) {
+@media (max-width: 480px) {
     .head,
     .head > div:first-child,
     .head > div:last-child {
