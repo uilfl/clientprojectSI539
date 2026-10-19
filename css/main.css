@@ -158,7 +158,7 @@ main > section > article {
     margin-top: 1rem;
 }
 
-/* consultation from google search and AI*/
+/* reference: https://www.joomlashack.com/blog/tutorials/theming-footer-with-media-queries/ */
 .impact-stats {
   padding: 1.5rem 0;
 }
