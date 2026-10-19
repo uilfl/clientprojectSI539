@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 
+/*https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/box-sizing, https://www.paulirish.com/2012/box-sizing-border-box-ftw/ , https://piccalil.li/blog/the-box-model-and-box-sizing/ */
 * {
     box-sizing: border-box;
 }
@@ -337,7 +338,7 @@ footer {
     margin: 0;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 580px) {
     .head,
     .head > div:first-child,
     .head > div:last-child {
@@ -402,7 +403,7 @@ footer {
             "image"
             "list";
     }
-
+    /* reference : https://blog.hubspot.com/website/website-footer */
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
