@@ -403,7 +403,7 @@ footer {
             "image"
             "list";
     }
-    /* reference : https://blog.hubspot.com/website/website-footer */
+    /* reference : https://www.joomlashack.com/blog/tutorials/theming-footer-with-media-queries/ */
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
