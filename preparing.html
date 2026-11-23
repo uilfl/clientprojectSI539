@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/html5reset.css">
     <link rel="stylesheet" href="css/main.css">
     <title>Preparing Your Experience | UMSI</title>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/site.js" defer></script>
 </head>
 <body>
   <header class="head">
-    <div class ="header content">
-  <img  class= "logo" src="images/logo-header.png" width = "100" height = "100" alt="UMSI Logo">
-  <h1>Welcome to the UMSI Engaged Learning Office</h1>
-  <a class="skip-link" href = "#main">Skip to Main Content</a>
-  </div>
-  <div>
-      <div>
-            <div class ="social-media-link-group">
+    <div class="header-brand">
+        <img class="logo" src="images/logo-header.png" width="1118" height="112" alt="University of Michigan School of Information">
+        <h1>Preparing Your Experience</h1>
+        <a class="skip-link" href = "#main">Skip to Main Content</a>
+    </div>
+    <div class="header-tools">
+        <div class ="social-media-link-group">
                  <a href="https://www.linkedin.com/school/university-of-michigan---school-of-information/" target="_blank" rel="noopener noreferrer" aria-label="UMSI on LinkedIn">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Linkedin-Logo--Streamline-Logos" height="24" width="24" aria-hidden="true" focusable="false">
                         <desc>
@@ -40,21 +42,20 @@
                     </svg>
                 </a>
             </div>
-      </div>
         <nav aria-label="Primary navigation">
             <details class="nav-menu">
                 <summary class="nav-toggle"><span aria-hidden="true">&#9776;</span> Menu</summary>
                 <ul class="nav-links">
-               <li class="nav-links"><a href = "index.html">Home</a></li>
-                     <li class="nav-links"><a href = "preparing.html">Preparing Your Experience</a></li>
-                     <li class="nav-links"><a href = "starting.html">Starting Your Experience</a></li>
-                     <li class="nav-links"><a href = "student-experiences.html">Student Experiences</a></li>
+                      <li><a href = "index.html">Home</a></li>
+                     <li><a href = "preparing.html" aria-current="page">Preparing Your Experience</a></li>
+                     <li><a href = "starting.html">Starting Your Experience</a></li>
+                     <li><a href = "student-experiences.html">Student Experiences</a></li>
                 </ul>
             </details>
         </nav>
     </div>
-  </header>
-<main id="main">
+</header>
+<main id="main" tabindex="-1">
   
 <section>
   <h2>Launch Your Engaged Learning Journey</h2>
@@ -69,9 +70,10 @@
 
 </section>
 
-<section>
+<section class="preparation-resources">
   <h2>Phase 1: Preparing for the Experience</h2>
   <p>Before creating a solution, take time to understand the context, evaluate your team's readiness, and identify what you still need to learn.</p>
+  <div class="preparation-grid">
   <article>
     <h3>Approach the Work as a Collaborative Learner</h3>
     <p>Before writing code, sketching wireframes, or analyzing data, consider how your identity and previous experiences influence the way you understand the project.</p>
@@ -127,6 +129,7 @@
       <li><a href="https://docs.google.com/document/d/1twc-7TYWmb_PNrOBiDI1NuJqJAuhluTICr22GRd_NLc/edit?usp=drive_link">Project Management Worksheet</a>: Guidance on clarifying the project scope and objectives, team roles, and timeline. This worksheet can be used by the project team and shared with the client.</li>
     </ul>
   </article>
+  </div>
 </section>
 <section>
   <h2>Phase 2: Starting the Experience</h2>
@@ -188,7 +191,7 @@
       </ul>
     </div>
     <div class="footer-meta">
-      <p>&copy; 2026 Regents of the University of Michigan</p>
+      <p>&copy; <span data-current-year>2026</span> Regents of the University of Michigan</p>
     </div>
   </div>
 </footer>

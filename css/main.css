@@ -6,6 +6,40 @@
     box-sizing: border-box;
 }
 
+[hidden] { display: none !important; }
+
+.program-finder {
+    display: grid;
+    gap: 16px;
+    margin-block: 24px;
+    padding: 24px;
+    background: #FFFFFF;
+    border-top: 4px solid #FFCB05;
+    border-radius: 8px;
+}
+
+.program-finder label { display: block; font-weight: 600; margin-bottom: 8px; }
+.program-finder input,
+.program-finder select,
+.program-finder button {
+    min-height: 44px;
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #00274C;
+    border-radius: 4px;
+    font: inherit;
+    background: #FFFFFF;
+}
+.program-finder button { background: #00274C; color: #FFFFFF; cursor: pointer; }
+.program-finder button:hover { background: #001a33; }
+.program-results { margin: 0; }
+.program-empty { padding: 24px; border-left: 4px solid #FFCB05; }
+
+@media (min-width: 768px) {
+    .program-finder { grid-template-columns: 2fr 1fr auto; align-items: end; }
+    .program-results { grid-column: 1 / -1; }
+}
+
 body,
 button,
 input,
@@ -18,13 +52,24 @@ textarea {
 }
 
 
+h1, h2, h3 {
+    color: #00274C;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+h2 { font-size: 24px; }
+h3 { font-size: 18px; }
+footer h2 { color: #FFFFFF; }
+
 h1{
     font-size: 2em;
     margin: 0;
 }
 
 .head .logo {
-    width: 100px;
+    width: min(100%, 576px);
+    max-width: 100%;
     height: auto;
 }
 .skip-link {
@@ -40,6 +85,8 @@ h1{
 }
 
 .skip-link:focus {
+  clip: auto;
+  overflow: visible;
   position: fixed;
   top: 10px;
   left: 10px;
@@ -53,18 +100,18 @@ h1{
   border: 1px solid #000000;
 }
 .head {
-    padding: 1rem;
+    padding: 16px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 32px;
     flex-wrap: wrap;
 }
 
 .head > div:first-child {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 16px;
     flex-wrap: wrap;
 }
 
@@ -72,12 +119,12 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 0.75rem;
+    gap: 12px;
 }
 
 .social-media-link-group {
     display: flex;
-    gap: 0.75rem;
+    gap: 12px;
 }
 
 a {
@@ -92,20 +139,24 @@ a:focus-visible {
 nav ul.nav-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.25rem;
+    gap: 4px;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #00274C;;
+    background-color: #00274C;
 }
 
 nav ul.nav-links li {
+    display: flex;
+    align-items: stretch;
     margin: 0;
     color: #00274C;
 }
 
 nav ul.nav-links li a {
   display: block;
+  flex: 1;
+  width: 100%;
   color: #FFFFFF;
   text-align: center;
   padding: 14px 16px;
@@ -113,9 +164,23 @@ nav ul.nav-links li a {
   font-size: 18px;
 }
 
+nav ul.nav-links li a[aria-current="page"] {
+  background-color: #00274C;
+  color: #FFCB05;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: inset 0 -4px 0 #FFCB05;
+}
+
 nav ul.nav-links li a:hover,
 nav ul.nav-links li a:focus {
-  background-color: #00274C;
+  background-color: #001a33;
+  color: #FFFFFF;
+}
+
+nav ul.nav-links li a[aria-current="page"]:hover,
+nav ul.nav-links li a[aria-current="page"]:focus {
+  color: #FFCB05;
 }
 
 .nav-menu {
@@ -133,17 +198,17 @@ main img{
 
 main,
 .impact-stats {
-    width: min(100% - 2rem, 1200px);
+    width: min(100% - 32px, 1200px);
     margin: 0 auto;
 }
 
 main {
     background-color: #f2f2f2;
-    padding: 1.5rem;
+    padding: 24px;
 }
 
 main > section {
-    margin-bottom: 2.5rem;
+    margin-bottom: 40px;
 }
 
 main > section:last-child {
@@ -155,18 +220,18 @@ main > section > h2 {
 }
 
 main > section > article {
-    margin-top: 1rem;
+    margin-top: 16px;
 }
 
-/* reference: https://www.joomlashack.com/blog/tutorials/theming-footer-with-media-queries/ */
+/* reference: https://designmodo.com/statistics-ui-panel/ */
 .impact-stats {
-  padding: 1.5rem 0;
+  padding: 24px 0;
 }
 
 .impact-stats__list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
-  gap: 1rem;
+  gap: 16px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -174,10 +239,10 @@ main > section > article {
 
 .impact-stats__value {
   color: #00274C;
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-size: clamp(28px, 4vw, 40px);
   font-weight: 700;
   line-height: 1.1;
-  margin: 0 0 0.75rem;
+  margin: 0 0 12px;
 }
 
 
@@ -187,21 +252,21 @@ main > section > article {
 .vision > ul > li,
 .argument > ul > li {
   background: #f9f9f9;
-  padding: 1.5rem;
+  padding: 24px;
   border-radius: 8px;
 }
 
 article {
   background: #f9f9f9;
-  padding: 1.5rem;
+  padding: 24px;
   border-radius: 8px;
 }
 
 .vision article a {
     display: block;
     width: fit-content;
-    margin-top: 0.75rem;
-    padding: 0.25rem 0;
+    margin-top: 12px;
+    padding: 4px 0;
     color: #00274C;
     font-weight: 600;
     text-decoration: underline;
@@ -220,7 +285,7 @@ article img {
     "heading heading"
     "text image"
     "list list";
-  gap: 1.5rem;
+  gap: 24px;
 }
 
 .argument h2 {
@@ -243,7 +308,7 @@ article img {
 .argument > ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  gap: 1.5rem;
+  gap: 24px;
   list-style: none;
   padding-left: 0;
 }
@@ -256,14 +321,14 @@ article img {
 footer {
     background-color: #00274C;
     color: #FFFFFF;
-    margin-top: 2rem;
-    padding: 2rem max(1rem, calc((100% - 1200px) / 2));
+    margin-top: 32px;
+    padding: 32px max(16px, calc((100% - 1200px) / 2));
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    gap: 2rem;
+    gap: 32px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -272,7 +337,7 @@ footer {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 16px;
 }
 
 .footer-branding img {
@@ -289,16 +354,16 @@ footer {
     width: min(100%, 270px);
     height: auto;
     background-color: #FFFFFF;
-    padding: 0.5rem;
+    padding: 8px;
 }
 
 .footer-grid h2 {
-    font-size: 1.1rem;
-    margin: 0 0 0.75rem;
+    font-size: 17.6px;
+    margin: 0 0 12px;
 }
 
 .footer-grid p {
-    margin: 0 0 0.75rem;
+    margin: 0 0 12px;
 }
 
 .footer-grid a {
@@ -314,13 +379,13 @@ footer {
 
 .footer-nav li,
 .footer-social-links li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
 }
 
 .footer-social-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem 1rem;
+    gap: 12px 16px;
 }
 
 .footer-social-links li {
@@ -331,14 +396,15 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     grid-column: 1 / -1;
     margin: 0;
-    padding-top: 1rem;
+    padding-top: 16px;
 }
 
 .footer-meta p {
     margin: 0;
 }
 
-@media (max-width: 480px) {
+/* Mobile layout is the default; larger screens enhance it below. */
+
     .head,
     .head > div:first-child,
     .head > div:last-child {
@@ -350,7 +416,7 @@ footer {
     }
 
     .social-media-link-group {
-        justify-content: center;
+        justify-content: flex-end;
     }
 
     nav ul.nav-links {
@@ -371,8 +437,8 @@ footer {
         background-color: #00274C;
         color: #FFFFFF;
         cursor: pointer;
-        font-size: 1rem;
-        padding: 0.75rem 1rem;
+        font-size: 16px;
+        padding: 12px 16px;
         text-align: center;
     }
 
@@ -406,7 +472,7 @@ footer {
     /* reference : https://www.joomlashack.com/blog/tutorials/theming-footer-with-media-queries/ */
     .footer-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 24px;
         text-align: center;
     }
 
@@ -416,5 +482,297 @@ footer {
 
     .footer-meta {
         grid-column: auto;
+    }
+
+@media (min-width: 768px) {
+    .head,
+    .head > div:first-child {
+        align-items: flex-start;
+    }
+
+    .head > div:last-child {
+        align-items: flex-end;
+        width: auto;
+    }
+
+    .social-media-link-group {
+        justify-content: flex-end;
+    }
+
+    .nav-menu {
+        display: block;
+    }
+
+    /* Without JavaScript, keep the closed menu accessible through its summary. */
+    .nav-menu[open] .nav-toggle {
+        display: none;
+    }
+
+    .nav-menu .nav-links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .argument {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas: "heading heading" "text image" "list list";
+    }
+
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 32px;
+        text-align: left;
+    }
+
+    .footer-branding {
+        justify-content: flex-start;
+    }
+
+    .footer-meta {
+        grid-column: 1 / -1;
+    }
+}
+
+/* 404 recovery page: stacked on phones, expanded into columns on larger screens. */
+.error-main {
+    padding: clamp(20px, 4vw, 48px);
+}
+
+.error-intro {
+    display: grid;
+    gap: 24px;
+    align-items: center;
+    border-bottom: 2px solid #00274C;
+    padding-bottom: 32px;
+}
+
+.error-code {
+    margin: 0;
+    color: #00274C;
+    font-size: clamp(80px, 15vw, 160px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.06em;
+    border-left: 8px solid #FFCB05;
+    padding-left: 16px;
+}
+
+.error-eyebrow {
+    color: #00274C;
+    font-weight: 600;
+    margin: 0 0 12px;
+}
+
+.error-intro h1 {
+    font-size: clamp(28px, 4vw, 44px);
+    margin: 0;
+}
+
+.error-intro p:not(.error-code) {
+    max-width: 60ch;
+}
+
+.error-home {
+    display: inline-block;
+    background: #00274C;
+    color: #FFFFFF;
+    padding: 14px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-underline-offset: 0.2em;
+}
+
+.error-home:hover {
+    background: #001a33;
+}
+
+.error-resource-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+}
+
+.error-resource-grid article {
+    border-top: 4px solid #FFCB05;
+}
+
+.error-resource-grid h3 {
+    margin-top: 0;
+}
+
+.error-resource-grid p {
+    margin-bottom: 0;
+}
+
+.error-help {
+    margin-top: 24px;
+}
+
+.error-page address a {
+    overflow-wrap: anywhere;
+}
+
+@media (min-width: 768px) {
+    .error-intro {
+        grid-template-columns: 1fr 2fr;
+        gap: 48px;
+        padding-block: 16px 48px;
+    }
+
+    .error-resource-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.error-site-title {
+    color: #00274C;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0;
+}
+
+/* Shared readable controls and page-specific content grids. */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+    outline: 3px solid #00274C;
+    outline-offset: 4px;
+}
+
+.nav-toggle:focus-visible {
+    outline-color: #FFCB05;
+    outline-offset: -4px;
+}
+
+.preparation-grid,
+.photo-grid,
+.experience-gallery {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+}
+
+.preparation-grid article { margin: 0; }
+.photo-grid h2,
+.photo-grid p,
+.experience-gallery > h2,
+.experience-gallery > p { margin: 0; }
+
+.photo-grid img,
+.experience-gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.experience-gallery figure { margin: 0; }
+.experience-gallery figcaption { margin-top: 12px; }
+
+@media (min-width: 768px) {
+    .preparation-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .preparation-grid article:last-child { grid-column: 1 / -1; }
+    .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+    .photo-grid > h2,
+    .photo-grid > p { grid-column: 1 / -1; }
+    .experience-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
+    .experience-gallery > h2,
+    .experience-gallery > p { grid-column: 1 / -1; }
+}
+
+/* The UMSI wordmark leads the header; the page title sits underneath. */
+.head > div:first-child {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 14px;
+}
+
+.head h1,
+.head .error-site-title {
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.4;
+    font-weight: 500;
+    max-width: 60ch;
+}
+
+.head .logo {
+    display: block;
+    flex: 0 0 auto;
+}
+
+/* Shared header: branding and social links above a full-width navigation row. */
+.head {
+    width: min(100% - 32px, 1200px);
+    margin-inline: auto;
+    padding: 24px 0;
+}
+
+.head .header-tools {
+    width: 100%;
+    align-items: stretch;
+    gap: 16px;
+}
+
+.social-media-link-group a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+@media (min-width: 768px) {
+    .head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 28px 32px;
+        padding-block: 40px 28px;
+    }
+
+    .head .header-brand {
+        grid-column: 1;
+        grid-row: 1;
+        min-width: 0;
+    }
+
+    .head .header-tools {
+        display: contents;
+    }
+
+    .head .social-media-link-group {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: end;
+        justify-content: flex-end;
+        gap: 8px;
+    }
+
+    .head nav {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+
+    .head nav ul.nav-links {
+        gap: 0;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .head nav ul.nav-links li {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .head nav ul.nav-links li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 12px;
+        font-size: clamp(16px, 1.5vw, 18px);
     }
 }
