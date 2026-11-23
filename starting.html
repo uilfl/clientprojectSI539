@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/html5reset.css">
     <link rel="stylesheet" href="css/main.css">
     <title>Starting Your Experience | UMSI</title>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/site.js" defer></script>
 </head>
 <body>
 
     <header class="head">
-        <div class="header content">
-        <img class="logo" src="images/logo-header.png" width = "100" height = "100" alt="UMSI Logo">
+    <div class="header-brand">
+        <img class="logo" src="images/logo-header.png" width="1118" height="112" alt="University of Michigan School of Information">
         <h1>Starting Your Experience</h1>
         <a class="skip-link" href = "#main">Skip to Main Content</a>
-        </div>
-        <div>
-            <div class ="social-media-link-group">
+    </div>
+    <div class="header-tools">
+        <div class ="social-media-link-group">
                 <a href="https://www.linkedin.com/school/university-of-michigan---school-of-information/" aria-label="UMSI on LinkedIn" target="_blank" rel="noopener noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Linkedin-Logo--Streamline-Logos" height="24" width="24" aria-hidden="true" focusable="false">
                         <desc>
@@ -40,25 +43,24 @@
                     </svg>
                 </a>
             </div>
-
         <nav aria-label="Primary navigation">
  <details class="nav-menu">
  <summary class="nav-toggle"><span aria-hidden="true">&#9776;</span> Menu</summary>
  <ul class="nav-links">
-                <li class="nav-links"><a href = "index.html">Home</a></li>
-                     <li class="nav-links"><a href = "preparing.html">Preparing Your Experience</a></li>
-                     <li class="nav-links"><a href = "starting.html">Starting Your Experience</a></li>
-                     <li class="nav-links"><a href = "student-experiences.html">Student Experiences</a></li>
+                <li><a href = "index.html">Home</a></li>
+                     <li><a href = "preparing.html">Preparing Your Experience</a></li>
+                     <li><a href = "starting.html" aria-current="page">Starting Your Experience</a></li>
+                     <li><a href = "student-experiences.html">Student Experiences</a></li>
     </ul> 
     </details>
         </nav>
-        </div>
-    </header>
-<main id="main">
+    </div>
+</header>
+<main id="main" tabindex="-1">
     <p>
         Explore how UMSI students connect information skills with community-based projects, local partners, and real-world learning. If you are a new student or a prospective student, you can build your confident from these small activities organized by the engagement learning office.
     </p>
-    <section class="student-activities-highlights">
+    <section class="student-activities-highlights photo-grid">
         <h2>Design Jam Activities</h2>
         <img src="images/information-school/UMSI_DesignJam_MixelStudio_11052025_04.jpg" alt="Students collaborating during a Design Jam activity"
         width="600" height="400">
@@ -67,11 +69,11 @@
         <img src="images/information-school/UMSI_DesignJam_MixelStudio_11052025_06.jpg" width="600" height="400" alt="Students participating in a Design Jam workshop">
     </section>
 
-    <section class="orientation">
+    <section class="orientation photo-grid">
         <h2>Orientation for New Information School Students</h2>
         <img src="images/information-school/UMSI_MastersOrientation_081825_01.jpg" width="600" height="400" alt="A new Information School student participating in orientation activities">
-        <p>Orientation introduces new students to the Information School community and prepares them to participate in collaborative learning experiences.</p>
         <img src="images/information-school/UMSI_MastersOrientation_081825_03.jpg" width="600" height="400" alt="A group of new Information School students participating in orientation activities">
+        <p>Orientation introduces new students to the Information School community and prepares them to participate in collaborative learning experiences.</p>
     </section>
     </main>
     <footer>
@@ -103,7 +105,7 @@
           </ul>
         </div>
         <div class="footer-meta">
-          <p>&copy; 2026 Regents of the University of Michigan</p>
+          <p>&copy; <span data-current-year>2026</span> Regents of the University of Michigan</p>
         </div>
       </div>
     </footer>

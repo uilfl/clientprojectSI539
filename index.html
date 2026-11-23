@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/html5reset.css">
     <link rel="stylesheet" href="css/main.css">
     <title>Engaged Learning Resources | UMSI</title>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/site.js" defer></script>
+    <script src="js/program-finder.js" defer></script>
 </head>
 <body>
 
 <header class="head">
-  <div class ="header content">
-        <img class="logo" src="images/logo-header.png" width = "100" height = "100" alt="UMSI Logo">
-        <h1>Welcome to the UMSI Engaged Learning Office</h1>
+    <div class="header-brand">
+        <img class="logo" src="images/logo-header.png" width="1118" height="112" alt="University of Michigan School of Information">
+        <h1> Welcome to the Engaged Learning Office</h1>
         <a class="skip-link" href = "#main">Skip to Main Content</a>
-
-  </div>
-  <div>
-     <div>
-            <div class ="social-media-link-group">
+    </div>
+    <div class="header-tools">
+        <div class ="social-media-link-group">
                  <a href="https://www.linkedin.com/school/university-of-michigan---school-of-information/" target="_blank" rel="noopener noreferrer" aria-label="UMSI on LinkedIn">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Linkedin-Logo--Streamline-Logos" height="24" width="24" aria-hidden="true" focusable="false">
                         <desc>
@@ -42,22 +44,18 @@
                     </svg>
                 </a>
               </div>
-
         <nav aria-label="Primary navigation">
                 <details class="nav-menu">
                     <summary class="nav-toggle"><span aria-hidden="true">&#9776;</span> Menu</summary>
                     <ul class="nav-links">
-                    <li class="nav-links"><a href = "index.html">Home</a></li>
-                     <li class="nav-links"><a href = "preparing.html">Preparing Your Experience</a></li>
-                     <li class="nav-links"><a href = "starting.html">Starting Your Experience</a></li>
-                     <li class="nav-links"><a href = "student-experiences.html">Student Experiences</a></li>
+                    <li><a href = "index.html" aria-current="page">Home</a></li>
+                     <li><a href = "preparing.html">Preparing Your Experience</a></li>
+                     <li><a href = "starting.html">Starting Your Experience</a></li>
+                     <li><a href = "student-experiences.html">Student Experiences</a></li>
                      </ul>
                 </details>
         </nav>
-        </div>
-        </div>
-   
-
+    </div>
 </header>
  <section class="impact-stats" aria-labelledby="impact-stats-heading">
     <header class="impact-stats__header">
@@ -91,7 +89,7 @@
         </li>
     </ul>
 </section>
-    <main id="main">
+    <main id="main" tabindex="-1">
     <section class="vision">
       <h2>Our Vision: Build Skills. Work with Partners. Have an Impact.</h2>
       <p>
@@ -153,38 +151,57 @@
   </section>
 
    <section>
-      <h2>Featured Programs</h2>
+      <h2 id="programs-heading">Featured Programs</h2>
       <p>Explore opportunities to collaborate with organizations, communities, student teams, and partners in Michigan and beyond.</p>
-      <article>
+      <form class="program-finder" role="search" aria-labelledby="programs-heading" hidden>
+        <div>
+          <label for="program-search">Search programs</label>
+          <input id="program-search" type="search" placeholder="Try data, community, or leadership">
+        </div>
+        <div>
+          <label for="program-interest">Area of interest</label>
+          <select id="program-interest">
+            <option value="all">All interests</option>
+            <option value="technology">Technology and data</option>
+            <option value="community">Community engagement</option>
+            <option value="leadership">Leadership</option>
+            <option value="global">Global learning</option>
+          </select>
+        </div>
+        <button type="reset">Clear filters</button>
+        <p class="program-results" role="status" aria-live="polite" aria-atomic="true"></p>
+      </form>
+      <p class="program-empty" hidden>No programs match your filters. Try a different search or clear the filters.</p>
+      <article data-program data-interest="technology">
       <h3><a href="https://mcompass.umich.edu/_portal/tds-program-brochure?programid=12810">AI Clinic Project Experience</a></h3>
       <p>Work with a team on an applied artificial intelligence project for a partner organization.</p>
       </article>
 
-      <article>
+      <article data-program data-interest="technology community">
       <h3><a href="https://mcompass.umich.edu/_portal/tds-program-brochure?programid=12556">A2 Data Dive</a></h3>
       <p>Use information and data skills to help address challenges identified by community organizations.</p>
       </article>
 
-      <article>
+      <article data-program data-interest="community">
         <h3><a href="https://mcompass.umich.edu/_portal/tds-program-brochure?programid=11297">Alternative Fall Break</a></h3>
         <p>Participate in a community-engaged learning experience during the University’s fall break.</p>
       </article>
 
-      <article>
+      <article data-program data-interest="community">
         <h3><a href="https://mcompass.umich.edu/_portal/tds-program-brochure?programid=10621">Alternative Spring Break (ASB)</a></h3>
         <p>Collaborate with communities and nonprofit organizations on information-related projects during spring break.</p>
       </article>
 
-      <article>
+      <article data-program data-interest="leadership community">
         <h3><a href="https://mcompass.umich.edu/_portal/tds-program-brochure?programid=12294">Student Organization Engaged Learning Leaders</a></h3>
         <p>Develop leadership and project-management skills while supporting engaged learning through a UMSI student organization.</p>
       </article>
 
-      <article>
+      <article data-program data-interest="global">
         <h3><a href="https://www.si.umich.edu/student-life/study-abroad">Study Abroad</a></h3>
         <p>Build intercultural awareness and apply your learning in an international setting. </p>
       </article>
-        <article>
+        <article data-program data-interest="leadership">
       <h3>Navigate the Experience</h3>
       <p>Manage projects and teams, conduct ethical research, communicate progress, respond to feedback, and work through unexpected challenges.</p>
       <a href="https://mcompass.umich.edu/_portal/program-discovery?search=%5B%7B%22filterType%22%3A%22programDiscoveryIsActive%22%2C%22filterValues%22%3A%5B%7B%22value%22%3Atrue%7D%5D%7D%2C%7B%22filterType%22%3A%22programDiscoveryKeyword%22%2C%22filterValues%22%3A%5B%7B%22value%22%3A%22engagement%22%7D%2C%7B%22value%22%3A%22learning%22%7D%5D%7D%2C%7B%22filterType%22%3A%22programDiscoveryProgramParameters%22%2C%22filterValues%22%3A%5B%7B%22id%22%3A10005%2C%22value%22%3A%22Information%22%7D%5D%7D%5D">Find active project resources</a>
@@ -211,6 +228,7 @@
           </div>
           <h2>Engaged Learning Office</h2>
           <p>University of Michigan School of Information</p>
+      <address><a href="mailto:umsi.engagement@umich.edu">umsi.engagement@umich.edu</a></address>
         </div>
         <div>
           <h2>Explore</h2>
@@ -230,7 +248,7 @@
           </ul>
         </div>
         <div class="footer-meta">
-          <p>&copy; 2026 Regents of the University of Michigan</p>
+          <p>&copy; <span data-current-year>2026</span> Regents of the University of Michigan</p>
         </div>
       </div>
     </footer>

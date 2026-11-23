@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/html5reset.css">
     <link rel="stylesheet" href="css/main.css">
     <title>Student Experiences in Engaged Learning</title>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/site.js" defer></script>
 </head>
 <body>
     <header class="head">
-        <div>
-        <img class="logo" src="images/logo-header.png" width = "100" height = "100" alt="UMSI Logo">
+    <div class="header-brand">
+        <img class="logo" src="images/logo-header.png" width="1118" height="112" alt="University of Michigan School of Information">
         <h1>Student Experiences in Engaged Learning</h1>
         <a class="skip-link" href = "#main">Skip to Main Content</a>
-        </div>
-        <div>
-            <div class ="social-media-link-group">
+    </div>
+    <div class="header-tools">
+        <div class ="social-media-link-group">
                   <a href="https://www.linkedin.com/school/university-of-michigan---school-of-information/" target="_blank" rel="noopener noreferrer" aria-label="UMSI on LinkedIn">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Linkedin-Logo--Streamline-Logos" height="24" width="24" aria-hidden="true" focusable="false">
                         <desc>
@@ -39,24 +42,23 @@
                     </svg>
                 </a>
             </div>
-
         <nav aria-label="Primary navigation">
             <details class="nav-menu">
                 <summary class="nav-toggle"><span aria-hidden="true">&#9776;</span> Menu</summary>
                 <ul class="nav-links">
-               <li class="nav-links"><a href = "index.html">Home</a></li>
-                     <li class="nav-links"><a href = "preparing.html">Preparing Your Experience</a></li>
-                     <li class="nav-links"><a href = "starting.html">Starting Your Experience</a></li>
-                     <li class="nav-links"><a href = "student-experiences.html">Student Experiences</a></li>
+               <li><a href = "index.html">Home</a></li>
+                     <li><a href = "preparing.html">Preparing Your Experience</a></li>
+                     <li><a href = "starting.html">Starting Your Experience</a></li>
+                     <li><a href = "student-experiences.html" aria-current="page">Student Experiences</a></li>
                 </ul>
             </details>
         </nav>
-        </div>
-    </header>
-    <main id="main">
+    </div>
+</header>
+    <main id="main" tabindex="-1">
     <p>Explore how UMSI students connect information skills with community-based projects, local partners, and real-world learning.</p>
 
-    <section>
+    <section class="experience-gallery">
         <h2>Global Information Engagement Project: Heidelberg Project</h2>
         <p><strong>Location:</strong> Detroit, Michigan</p>
         <p><strong>Student participants:</strong> UMSI students</p>
@@ -77,7 +79,7 @@
         </figure>
     </section>
 
-    <section>
+    <section class="experience-gallery">
         <h2>CIDEXPO Engaged Learning Experience</h2>
         <p><strong>Location:</strong> Dearborn, Michigan</p>
         <p><strong>Student participants:</strong> UMSI students</p>
@@ -127,7 +129,7 @@
           </ul>
         </div>
         <div class="footer-meta">
-          <p>&copy; 2026 Regents of the University of Michigan</p>
+          <p>&copy; <span data-current-year>2026</span> Regents of the University of Michigan</p>
         </div>
       </div>
     </footer>
